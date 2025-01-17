@@ -1,0 +1,74 @@
+body {
+    margin-top: 60px; /* Osigurava da sadržaj ne bude prekriven navbarom */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff; 
+    color: #333; 
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px; /* Dodaj razmak između sadržaja i footer-a */
+
+}
+
+/* Hero sekcija */
+.text-center {
+    margin-bottom: 40px;
+}
+
+/* H1 za ABOUT stranicu - dodavanje razmaka ispod navbar-a */
+h1.display-4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 100px; /* Povećaj margin-top kako bi se spustio ispod navbar-a */
+    margin-bottom: 20px; /* Razmak ispod naslova */
+}
+
+/* Razdvajanje između naslova i podnaslova */
+hr.my-4 {
+    border-top: 3px solid #333;
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Stilizacija za podnaslov */
+h2 {
+    color: #555;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+/* Video sekcija */
+video {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sjena oko videa */
+}
+
+/* Tekstualni sadržaj */
+.row p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivnost - Za mobilne uređaje */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+

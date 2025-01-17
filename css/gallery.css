@@ -1,0 +1,113 @@
+/* Globalna stilizacija */
+body {
+    font-family: 'Roboto', sans-serif; /* Font */
+    background-color: #f9f9f9; /* Svijetla pozadina */
+}
+
+/* Stilizacija za tekst u galeriji */
+.text-center {
+    margin-bottom: 40px;
+}
+
+.text-center h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.text-center p {
+    font-size: 1.2em;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Mrežni raspored kartica */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Kolone u galeriji */
+.col {
+    flex: 1 1 calc(33.33% - 20px); /* 3 slike po redu na većim ekranima */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .col {
+        flex: 1 1 calc(50% - 20px); /* 2 slike po redu na tabletima */
+    }
+}
+
+@media (max-width: 480px) {
+    .col {
+        flex: 1 1 100%; /* 1 slika po redu na mobilnim uređajima */
+    }
+}
+
+/* Stilizacija kartica i slika */
+.card {
+    border: none; /* Uklanjanje okvira */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sjena oko kartice */
+    border-radius: 10px; /* Zaobljeni kutovi kartica */
+    overflow: hidden; /* Sakrij sadržaj koji izlazi izvan kartice */
+    /*background-color: #fff; *//* Bijela pozadina kartica */
+    transition: transform 0.5s, box-shadow 0.5s; /* Animacija */
+}
+
+.card img {
+    width: 100%; /* Slika ispunjava karticu */
+    height: auto;
+    object-fit: cover; /* Slika prekriva karticu, zadržava proporcije */
+    /* border-bottom: 5px solid #333;  */
+}
+
+/* Hover efekt na karticama */
+.card:hover {
+    transform: scale(1.05); /* Malo povećanje kartice */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Povećana sjena */
+}
+
+/* Footer stilizacija */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+h1 {
+    text-align: center;  /* Centriraj naslov */
+    font-size: 3em;      /* Povećaj veličinu fonta */
+    color: #f00;         /* Crvena boja za naslov */
+    margin-top: 80px;    /* Razmak s vrha stranice, ispod navigacije */
+    margin-bottom: 20px; /* Razmak između naslova i sadržaja ispod */
+}
+
+h1.display-4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 100px; /* Povećaj margin-top kako bi se spustio ispod navbar-a */
+    margin-bottom: 20px; /* Razmak ispod naslova */
+}
+
+hr.my-4 {
+    border-top: 3px solid #333;
+    width: 80%;
+    margin: 20px auto;
+}
+
+h2 {
+    color: #555;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    text-align: center;
+
+}

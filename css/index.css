@@ -1,0 +1,148 @@
+/* Osnovne postavke za tijelo stranice */
+body {
+    margin-top: 60px; /* Povećaj razmak kako sadržaj ne bi bio ispod navbar-a */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Bijela podloga */
+    color: #333; /* Tamno siva boja teksta */
+}
+
+/* Navigacijska traka */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Crna pozadina */
+    padding: 10px 20px;
+    color: #fff; /* Bijeli tekst */
+    position: fixed; /* Fiksiraj navbar */
+    top: 0; /* Na vrh stranice */
+    left: 0; /* Poravnaj sa lijevom stranom */
+    width: 100%; /* Širina cijele stranice */
+    z-index: 1000; /* Osiguraj da je navbar iznad ostatka sadržaja */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Dodaj laganu sjenu ispod navbar-a */
+}
+
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #f00; /* Crveni logo */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+    margin-right: 20%;
+
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 1s;
+}
+
+.navbar ul li a:hover {
+    background-color: #f00; /* Crvena na hover */
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Efekt prilikom hoveranja */
+}
+
+/* Glavna slika i tekst */
+.ring-home {
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.ring-home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.ring-home img {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.ring-home figcaption {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* Drustvene */
+.drustvene {
+    position: fixed;
+    bottom: 50px; /* Razmak od dna stranice */
+    left: 50%;
+    transform: translateX(-50%); /* Centriranje na horizontalnoj osi */
+    display: flex;
+    justify-content: center; /* Centriranje slika unutar kontejnera */
+    gap: 10px; /* Razmak između slika */
+    z-index: 101; /* Postavljanje ispred footer-a */
+}
+
+.drustvene img {
+    width: 50px; /* Podesi veličinu slika */
+    height: auto; /* Održava proporcije slike */
+    transition: transform 0.3s ease; /* Efekt prilikom hoveranja */
+}
+
+/* Efekt kada se prelazi mišem preko slika */
+.drustvene img:hover {
+    transform: scale(1.2); /* Povećaj sliku na hover */
+}
+
+/* Responzivnost */
+@media (max-width: 768px) {
+    .drustvene img {
+        width: 40px; /* Manje slike na manjim ekranima */
+    }
+}
+
+@media (max-width: 480px) {
+    .drustvene img {
+        width: 30px; /* Još manje slike na vrlo malim ekranima */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 0.1em;
+    position: fixed; /* Pozicionira footer na fiksnu poziciju */
+    bottom: 0; /* Drži footer na dnu */
+    left: 0; /* Poravnava ga s lijevim rubom */
+    width: 100%; /* Širina footer-a je 100% širine prozora */
+    z-index: 100; /* Osigurava da footer bude iznad drugih elemenata */
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    margin: 0.5em;
+}
+
+.dm-sans-h1 {
+    font-family: "DM Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }

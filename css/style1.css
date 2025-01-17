@@ -1,0 +1,404 @@
+/* Osnovni stilovi */
+body {
+    margin-top: 60px; /* Povećaj razmak kako sadržaj ne bi bio ispod navbar-a */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Bijela podloga */
+    color: #333; /* Tamno siva boja teksta */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    padding: 0.1em;
+    position: fixed; /* Pozicionira footer na fiksnu poziciju */
+    bottom: 0; /* Drži footer na dnu */
+    left: 0; /* Poravnava ga s lijevim rubom */
+    width: 100%; /* Širina footer-a je 100% širine prozora */
+    z-index: 100; /* Osigurava da footer bude iznad drugih elemenata */
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    margin: 0.5em;
+}
+
+/* Navigacijska traka */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Crna pozadina */
+    padding: 10px 20px;
+    color: #fff; /* Bijeli tekst */
+    position: fixed; /* Fiksiraj navbar */
+    top: 0; /* Na vrh stranice */
+    left: 0; /* Poravnaj sa lijevom stranom */
+    width: 100%; /* Širina cijele stranice */
+    z-index: 1000; /* Osiguraj da je navbar iznad ostatka sadržaja */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Dodaj laganu sjenu ispod navbar-a */
+}
+
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #f00; /* Crveni logo */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+    margin-right: 20%;
+
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 1s;
+}
+
+.navbar ul li a:hover {
+    background-color: #f00; /* Crvena na hover */
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Efekt prilikom hoveranja */
+}
+
+
+
+/* Hero sekcija */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px); /* Visina minus visina navigacije */
+    background-color: #333; /* Tamno siva pozadina */
+    color: #fff; /* Bijeli tekst */
+    text-align: center;
+    padding: 20px;
+}
+
+.hero img {
+    max-width: 200px;
+    margin-bottom: 20px;
+    filter: grayscale(50%); /* Blaga crno-bijela slika */
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #f00; /* Crveni naslov */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 10px 0 20px;
+    color: #ccc; /* Svijetlo siva */
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f00; /* Crveni gumb */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #fff; /* Bijela na hover */
+    color: #f00;
+}
+
+/* Dodatni stilovi za sadržaj */
+h1, h2, h3, h4, h5, h6 {
+    color: #f00; /* Crveni naslovi */
+}
+
+a {
+    color: #f00; /* Crveni linkovi */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.new-form-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.new-form-btn:hover {
+    background-color: #c82333;
+}
+
+/* Drustvene */
+.drustvene {
+    position: fixed;
+    bottom: 50px; /* Razmak od dna stranice */
+    left: 50%;
+    transform: translateX(-50%); /* Centriranje na horizontalnoj osi */
+    display: flex;
+    justify-content: center; /* Centriranje slika unutar kontejnera */
+    gap: 10px; /* Razmak između slika */
+    z-index: 101; /* Postavljanje ispred footer-a */
+}
+
+.drustvene img {
+    width: 50px; /* Podesi veličinu slika */
+    height: auto; /* Održava proporcije slike */
+    transition: transform 0.3s ease; /* Efekt prilikom hoveranja */
+}
+
+/* Efekt kada se prelazi mišem preko slika */
+.drustvene img:hover {
+    transform: scale(1.2); /* Povećaj sliku na hover */
+}
+
+/* Responzivnost */
+@media (max-width: 768px) {
+    .drustvene img {
+        width: 40px; /* Manje slike na manjim ekranima */
+    }
+}
+
+@media (max-width: 480px) {
+    .drustvene img {
+        width: 30px; /* Još manje slike na vrlo malim ekranima */
+    }
+}
+
+/* ring-home */
+/* Kontejner za sliku */
+.ring-home {
+    text-align: center; /* Centriranje sadržaja unutar figure */
+    display: block;
+}
+
+/* Stiliziranje naslova h1 */
+.ring-home h1 {
+    font-family: 'Roboto', sans-serif; /* Lijep font, možeš koristiti bilo koji font koji voliš */
+    font-weight: bold; /* Boldanje teksta */
+    font-size: 2.5rem; /* Veliki font za naslov */
+    margin-bottom: 20px; /* Razmak između naslova i slike */
+    color: #333; /* Tamna boja teksta */
+    text-transform: uppercase; /* Pretvara tekst u velika slova za naglašen izgled */
+    letter-spacing: 2px; /* Razmak između slova */
+}
+
+/* Slika */
+.ring-home img {
+    width: 50%; /* Srednja veličina slike */
+    height: auto; /* Održavanje proporcija slike */
+    max-width: 500px; /* Maksimalna širina slike */
+    margin-bottom: 10px; /* Razmak između slike i teksta */
+}
+
+/* Tekst ispod slike */
+.ring-home figcaption {
+    font-size: 1.1rem; /* Povećanje veličine fonta za bolju vidljivost */
+    color: #333; /* Boja teksta */
+    margin-top: 10px; /* Razmak između slike i teksta */
+    font-style: italic; /* Italic stil za tekst */
+    text-align: center; /* Centriranje teksta */
+    max-width: 80%; /* Ograničenje širine teksta */
+    margin-left: auto; /* Poravnanje na sredinu */
+    margin-right: auto; /* Poravnanje na sredinu */
+}
+
+
+/* Osnovni stilovi za forma_contact section */
+.forma_contact {
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forma_contact h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.forma_contact p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Osnovni stilovi za forma_contact section */
+.forma_contact {
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forma_contact h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.forma_contact p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Stilovi za formu */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    align-self: flex-start;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Stil za uspješne poruke */
+.success-message {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #155724;
+    border-radius: 5px;
+}
+
+.new-form-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.new-form-btn:hover {
+    background-color: #218838;
+}
+
+
+
+
+
+
+.news-item {
+    margin-bottom: 20px;
+}
+
+.news-item h1 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.news-item p {
+    color: #555;
+}
+
+.news-item small {
+    font-style: italic;
+    color: #888;
+}
+
+.news-image {
+    text-align: center; /* Centriranje slike */
+    margin: 10px 0;
+}
+
+.news-image img {
+    max-width: 100%; /* Responzivnost - slika zauzima najviše širinu novosti */
+    height: auto; /* Zadržavanje proporcija slike */
+    border-radius: 8px; /* Zaobljeni rubovi slike */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Dodavanje sjene slici */
+}
+
