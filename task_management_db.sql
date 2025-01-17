@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2024 at 10:40 AM
+-- Generation Time: Jan 17, 2025 at 10:37 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,52 @@ SET time_zone = "+00:00";
 --
 -- Database: `task_management_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `message`, `created_at`) VALUES
+(1, 'test', 'a@a.com', 'test', '2025-01-16 19:40:28'),
+(2, 'test2', 'test2@test2.com', 'a', '2025-01-16 22:37:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `picture` varchar(255) NOT NULL,
+  `archive` enum('Y','N') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `description`, `date`, `picture`, `archive`) VALUES
+(1, 'Dates for tourist trips in 2025 – highlights on the Nordschleife and Grand Prix circuit', 'The Nürburgring has announced the dates for the 2025 tourist drives. From March to November, thousands of Nürburgring fans and visitors will once again have the opportunity to experience the legendary asphalt for themselves. For the first time, the barrier for the popular offer will open next year on March 8. In addition to various highlight dates on weekends and in the evening hours, there will then be the opportunity for a ride on the Nordschleife or the Grand Prix circuit almost every day.', '2025-01-17 19:39:46', '1-93.jpg', 'N'),
+(2, 'A gift for the fans: the season opener in DNLS', 'The Christmas tree is aglow with lights, biscuits and a hot drink are ready and waiting, and the comfy sofa invites you to linger... Only one thing is missing for complete happiness: thrilling racing in the Green Hell. The time has finally come: the Digital Nürburgring Endurance Series kicks off on December 21 with the RAVENOL 3-hour race. At 11:45 a.m., VLN.de will start the livestream and provide answers to the most important questions: How will DTM champion Mirko Bortolotti fare in his debut in the DNLS in the Dörr Esports Lamborghini Huracán GT3 EVO? How will the Ford Mustang GT3 fare on the Nordschleife during its first kilometers of racing? Can last year\'s SimRC champions also shine in the GT4 class? And how close will it be in the SP3 with the Renault Clio?', '2025-01-15 20:17:10', '2-9.jpg', 'N'),
+(4, 'Dream start for AMG Team Apex Racing at the DNLS opener', 'The season opener of the digital Nürburgring endurance series was a festival for every motorsport fan. In the RAVENOL 3-hour race, Alejandro Sánchez and Elias Seppänen in the Mercedes-AMG GT3 of AMG Team Apex finished just 0.27 seconds ahead. Last year\'s champion Norbi Kiss and Felix Quirmbach of BS+COMPETITION had to settle for second place. In third place, Sami-Matti Trogen and Vasilios Beletsiotis of AMG Team Williams completed a perfect triple victory for Mercedes-AMG. Apex Racing had two reasons to celebrate, as victory in the SP10 class also went to the virtual racing team from Great Britain. In the Cup 2 and SP3 classes, drivers from SCHERER eSPORT were at the top of the podium.', '2025-01-15 20:10:35', '4-92.jpg', 'N');
 
 -- --------------------------------------------------------
 
@@ -41,22 +87,11 @@ CREATE TABLE `notifications` (
 --
 
 INSERT INTO `notifications` (`id`, `message`, `recipient`, `type`, `date`, `is_read`) VALUES
-(1, '\'Customer Feedback Survey Analysis\' has been assigned to you. Please review and start working on it.', 7, 'New Task Assigned', '2024-09-05', 1),
-(2, '\'test task\' has been assigned to you. Please review and start working on it', 7, 'New Task Assigned', '0000-00-00', 1),
-(3, '\'Example task 2\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2006-09-24', 1),
-(4, '\'test\' has been assigned to you. Please review and start working on it', 8, 'New Task Assigned', '2009-06-24', 0),
-(5, '\'test task 3\' has been assigned to you. Please review and start working on it', 7, 'New Task Assigned', '2024-09-06', 1),
-(6, '\'Prepare monthly sales report\' has been assigned to you. Please review and start working on it', 7, 'New Task Assigned', '2024-09-06', 1),
-(7, '\'Update client database\' has been assigned to you. Please review and start working on it', 7, 'New Task Assigned', '2024-09-06', 1),
-(8, '\'Fix server downtime issue\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2024-09-06', 0),
-(9, '\'Plan annual marketing strategy\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2024-09-06', 0),
-(10, '\'Onboard new employees\' has been assigned to you. Please review and start working on it', 7, 'New Task Assigned', '2024-09-06', 0),
-(11, '\'Design new company website\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2024-09-06', 0),
-(12, '\'Conduct software testing\' has been assigned to you. Please review and start working on it', 7, 'New Task Assigned', '2024-09-06', 0),
-(13, '\'Schedule team meeting\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2024-09-06', 0),
-(14, '\'Prepare budget for Q4\' has been assigned to you. Please review and start working on it', 7, 'New Task Assigned', '2024-09-06', 0),
-(15, '\'Write blog post on industry trend\' has been assigned to you. Please review and start working on it', 7, 'New Task Assigned', '2024-09-06', 0),
-(16, '\'Renew software license\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2024-09-06', 0);
+(1, '\'CRASH HERE\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2025-01-17', 0),
+(2, '\'Dino TEST\' has been assigned to you. Please review and start working on it', 10, 'New Task Assigned', '2025-01-17', 1),
+(3, '\'Support\' has been assigned to you. Please review and start working on it', 2, 'New Task Assigned', '2025-01-17', 0),
+(4, '\'Exhaust too loud!\' has been assigned to you. Please review and start working on it', 120, 'New Task Assigned', '2025-01-17', 0),
+(5, '\'24h of Nürburgring\' has been assigned to you. Please review and start working on it', 130, 'New Task Assigned', '2025-01-17', 0);
 
 -- --------------------------------------------------------
 
@@ -79,23 +114,11 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`id`, `title`, `description`, `assigned_to`, `due_date`, `status`, `created_at`) VALUES
-(1, 'Task 1', 'Task Description', 7, NULL, 'completed', '2024-08-29 16:47:37'),
-(4, 'Monthly Financial Report Preparation', 'Prepare and review the monthly financial report, including profit and loss statements, balance sheets, and cash flow analysis.', 7, '2024-09-01', 'completed', '2024-08-31 10:50:20'),
-(5, 'Customer Feedback Survey Analysis', 'Collect and analyze data from the latest customer feedback survey to identify areas for improvement in customer service.', 7, '2024-09-03', 'in_progress', '2024-08-31 10:50:47'),
-(6, 'Website Maintenance and Update', 'Perform regular maintenance on the company website, update content, and ensure all security patches are applied.', 7, '2024-09-03', 'pending', '2024-08-31 10:51:12'),
-(7, 'Quarterly Inventory Audit', 'Conduct a thorough audit of inventory levels across all warehouses and update the inventory management system accordingly.', 2, '2024-09-03', 'completed', '2024-08-31 10:51:45'),
-(8, 'Employee Training Program Development', 'Develop and implement a new training program focused on enhancing employee skills in project management and teamwork.', 2, '2024-09-01', 'pending', '2024-08-31 10:52:11'),
-(17, 'Prepare monthly sales report', 'Compile and analyze sales data for the previous month', 7, '2024-09-06', 'pending', '2024-09-06 08:01:48'),
-(18, 'Update client database', 'Ensure all client information is current and complete', 7, '2024-09-07', 'pending', '2024-09-06 08:02:27'),
-(19, 'Fix server downtime issue', 'Investigate and resolve the cause of recent server downtimes', 2, '2024-09-07', 'pending', '2024-09-06 08:02:59'),
-(20, 'Plan annual marketing strategy', 'Develop a comprehensive marketing strategy for the next year', 2, '2024-09-04', 'pending', '2024-09-06 08:03:21'),
-(21, 'Onboard new employees', 'Complete HR onboarding tasks for the new hires', 7, '2024-09-07', 'pending', '2024-09-06 08:03:44'),
-(22, 'Design new company website', 'Create wireframes and mockups for the new website design', 2, '2024-09-06', 'pending', '2024-09-06 08:04:20'),
-(23, 'Conduct software testing', 'Run tests on the latest software release to identify bugs', 7, '2024-09-07', 'pending', '2024-09-06 08:04:39'),
-(24, 'Schedule team meeting', 'Organize a meeting to discuss project updates', 2, '2024-09-07', 'pending', '2024-09-06 08:04:57'),
-(25, 'Prepare budget for Q4', 'Create and review the budget for the upcoming quarter', 7, '2024-09-07', 'pending', '2024-09-06 08:05:21'),
-(26, 'Write blog post on industry trend', 'Draft and publish a blog post about current industry trend', 7, '2024-09-07', 'pending', '2024-09-06 08:10:50'),
-(27, 'Renew software license', 'Ensure all software licenses are renewed and up to date', 2, '2024-09-06', 'pending', '2024-09-06 08:11:28');
+(28, 'CRASH HERE', 'Pls come now!!', 2, '2025-01-17', 'pending', '2025-01-17 20:20:37'),
+(29, 'Dino TEST', 'Radi li ovo?', 110, '2025-01-17', 'pending', '2025-01-17 20:20:59'),
+(30, 'Support', 'One man here for flag assist!', 2, '2025-01-18', 'pending', '2025-01-17 20:25:25'),
+(31, 'Exhaust too loud!', 'Get out BMW M4 CS', 120, '2025-01-17', 'pending', '2025-01-17 20:26:22'),
+(32, '24h of Nürburgring', 'Saturday, June 21, 2025 at 4:00 PM – Sunday, June 22, 2025 at 4:00 PM', 130, '2025-09-12', 'pending', '2025-01-17 20:28:07');
 
 -- --------------------------------------------------------
 
@@ -117,14 +140,29 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `username`, `password`, `role`, `created_at`) VALUES
-(1, 'Oliver', 'admin', '$2y$10$TnyR1Y43m1EIWpb0MiwE8Ocm6rj0F2KojE3PobVfQDo9HYlAHY/7O', 'admin', '2024-08-28 07:10:04'),
-(2, 'Elias A.', 'elias', '$2y$10$8xpI.hVCVd/GKUzcYTxLUO7ICSqlxX5GstSv7WoOYfXuYOO/SZAZ2', 'employee', '2024-08-28 07:10:40'),
-(7, 'John', 'john', '$2y$10$CiV/f.jO5vIsSi0Fp1Xe7ubWG9v8uKfC.VfzQr/sjb5/gypWNdlBW', 'employee', '2024-08-29 17:11:21'),
-(8, 'Oliver', 'oliver', '$2y$10$E9Xx8UCsFcw44lfXxiq/5OJtloW381YJnu5lkn6q6uzIPdL5yH3PO', 'employee', '2024-08-29 17:11:34');
+(2, 'Ivica Corluka', 'carli', '$2y$10$1BFM20hyyvqvN6vnnyKDIenzXvb6I8EgSpLM.rCP.uvkIpdPcxNUq', 'employee', '2024-08-28 07:10:40'),
+(7, 'Pero Peric', 'pero', '$2y$10$H6dAtbeVSapB4h6jtITPhOjRliPWVMPjsTXU6JSlBjTOSzzALxb22', 'employee', '2024-08-29 17:11:21'),
+(10, 'Dino Besic', 'dino', '$2y$10$eyqYJOGBuQiM30KGvSDtqORfWvJnfshm61mErrjUX4t14zJ1SgdUG', 'admin', '2025-01-17 20:00:16'),
+(100, 'Oliver', 'admin', '$2y$10$TnyR1Y43m1EIWpb0MiwE8Ocm6rj0F2KojE3PobVfQDo9HYlAHY/7O', 'admin', '2024-08-28 05:10:04'),
+(110, 'Niki Lauda', 'lauda', '$2y$10$uMraoIhV1e3p4xq9dpsRZ.8yLU1UtCgySYpNsq7soqd1LidRsTNpy', 'employee', '2024-08-28 05:10:40'),
+(120, 'Michael Schumacher', 'michael', '$2y$10$D3mfZm8/kueZJQa8bO7b8OAsoCL0pJo2lhXutjkw4kbC9HBWUUBaO', 'employee', '2024-08-29 15:11:21'),
+(130, 'Misha Charoudin', 'misha', '$2y$10$h0CDjXGrSOjtCYRdHk8ljed5KkmFdmToIjzknEPjWkMJOGBRAyPN6', 'employee', '2024-08-29 15:11:34');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `notifications`
@@ -150,22 +188,34 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- Constraints for dumped tables
