@@ -1,47 +1,31 @@
-# Task Management System
-### A simple Task Management System built with PHP, MySQL, and XAMPP that allows users (admin and employees) to manage tasks, assign roles, track task progress, and receive notifications.
+# Web aplikacija - Sustav za upravljanje zadacima
+----------------------------------------------------------------------------------------------------------------
+Sustav je osmisljen kao interni, nije za vanjske prijave.
+Jedan administrator dodaje u bazu korisnike, koji se naknadno mogu prijaviti.
+Svaki korisnik moze postaviti vise zadataka sa detaljnim opisom.
+Prije LogIn-a, posjetitelj ima pristup web stranici koja je izradena.
+Web stranica je bazirana na nasumicnom odabiru.
+----------------------------------------------------------------------------------------------------------------
 
+- Upravljanje korisničkim ulogama: Podržava dvije uloge - administratora i zaposlenika.
+- Upravljanje zadacima: Stvaranje, ažuriranje, brisanje i pregled zadataka.
+- Kategorizacija zadataka: Filtrirajte zadatke prema statusu i roku.
+- Autentifikacija i autorizacija: siguran sustav prijave s kontrolom pristupa temeljenom na ulogama.
+- Obavijesti: Obavijestite korisnike o dodijeljenim zadacima i važnim ažuriranjima.
+- Filtriranje zadataka: Filtrirajte zadatke prema prioritetu, statusu, roku.
+- Rokovi zadataka: pratite rokove i zakašnjele zadatke.
 
-## Full Tutorial
+Prijava putem administratora:
+- korisnicko ime: admin
+- lozinka: 123
 
-[On Youtube](https://www.youtube.com/playlist?list=PL2WFgdVk-usHC-HHC0SkpsmHquwHB0Aiy)
+Prijava putem zaposlenika:
 
-## DEMO
-
-[DEMO](https://youtu.be/Ff3ug0eqrWI)
-
-## Features
-
-+ User Role Management: Supports two roles - Admin and Employee.
-+ Task Management: Create, update, delete, and view tasks.
-+ Task Categorization: Filter tasks by status, and due date.
-+ Authentication and Authorization: Secure login system with role-based access control.
-+ Notifications: Notify users of assigned tasks and important updates.
-+ Task Filtering: Filter tasks by priority, status, deadline.
-+ Task Deadlines: Track due dates and overdue tasks.
-
-## Requirements
-
-+ XAMPP (PHP, MySQL, Apache)
-+ PHP 7.4 or higher
-+ MySQL 5.7 or higher
-
-## Login Credentials:
-
-### Default Admin User:
-
-+ Username: admin
-+ Password: 123
-### Default Employee User:
-
-+ Username: john 
-+ Password: 123
-
-## Contributing
-
-If you'd like to contribute, please fork the repository and submit a pull request. Any contributions are welcome.
+- korisnicko ime: john 
+- lozinka: 123
 
 ## License
 
 This project is open-source and available under the MIT License."# Projekt2025" 
 "# Projekt2025" 
+Copyright 2025 Dino Bešić
